@@ -9,9 +9,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,300;0,400;0,700;1,700&display=swap" rel="stylesheet" />
 
-    <!-- Icon -->
-    <script src="https://unpkg.com/feather-icons"></script>
-
     <!-- My Style -->
     <link rel="stylesheet" href="css/style.css" />
   </head>
@@ -20,17 +17,62 @@
     <nav class="navbar">
       <a href="#" class="navbar-logo">Ngopikeun<span>Bray</span></a>
 
+      <!-- Nav list -->
       <div class="navbar-nav">
         <a href="#home">Home</a>
         <a href="#about">About Us</a>
         <a href="#menus">Menus</a>
+        <a href="#product">Product</a>
         <a href="#contact">Contact</a>
       </div>
 
+      <!-- Nav Extra -->
       <div class="navbar-extra">
-        <a href="#" id="search"><i data-feather="search"></i></a>
-        <a href="#" id="shopping-cart"><i data-feather="shopping-cart"></i></a>
-        <a href="#" id="hamburger-menu"><i data-feather="menu"></i></a>
+        <a href="#" id="search">
+          <img src="img/icon/search.svg" alt="" />
+        </a>
+        <a href="#" id="shopping-cart">
+          <img src="img/icon/shopping-cart.svg" alt="" />
+        </a>
+        <a href="#" id="hamburger-menu">
+          <img src="img/icon/menu.svg" alt="" />
+        </a>
+      </div>
+
+      <!-- Search Form -->
+      <div class="search-form">
+        <input type="search" id="search-box" placeholder="Search here...." />
+        <label for="search-box"><img src="img/icon/search.svg" alt="" /></label>
+      </div>
+
+      <!-- Shopping Cart -->
+      <div class="shopping-cart">
+        <div class="cart-item">
+          <img src="img/Product/1.jpg" alt="" class="product-imges" />
+          <div class="item-detail">
+            <h3>Product 1</h3>
+            <div class="item-price">Price 5$</div>
+          </div>
+          <img src="img/icon/trash-2.svg" alt="" class="remove-item" />
+        </div>
+
+        <div class="cart-item">
+          <img src="img/Product/3.jpg" alt="" class="product-imges" />
+          <div class="item-detail">
+            <h3>Product 1</h3>
+            <div class="item-price">Price 5$</div>
+          </div>
+          <img src="img/icon/trash-2.svg" alt="" class="remove-item" />
+        </div>
+
+        <div class="cart-item">
+          <img src="img/Product/2.jpg" alt="" class="product-imges" />
+          <div class="item-detail">
+            <h3>Product 1</h3>
+            <div class="item-price">Price 5$</div>
+          </div>
+          <img src="img/icon/trash-2.svg" alt="" class="remove-item" />
+        </div>
       </div>
     </nav>
 
@@ -76,19 +118,19 @@
 
         <div class="menus-card">
           <img src="img/Menu/3.jpg" alt="" class="menu-card-img" />
-          <h3 class="menus-card-tittle">- Espresso</h3>
+          <h3 class="menus-card-tittle">- Latte</h3>
           <p class="menus-card-price">Price 10$</p>
         </div>
 
         <div class="menus-card">
           <img src="img/Menu/4.jpg" alt="" class="menu-card-img" />
-          <h3 class="menus-card-tittle">- Espresso</h3>
+          <h3 class="menus-card-tittle">- Black Coffe</h3>
           <p class="menus-card-price">Price 10$</p>
         </div>
 
         <div class="menus-card">
           <img src="img/Menu/6.jpg" alt="" class="menu-card-img" />
-          <h3 class="menus-card-tittle">- Espresso</h3>
+          <h3 class="menus-card-tittle">- Americano</h3>
           <p class="menus-card-price">Price 10$</p>
         </div>
 
@@ -106,8 +148,79 @@
 
         <div class="menus-card">
           <img src="img/Menu/9.jpg" alt="" class="menu-card-img" />
-          <h3 class="menus-card-tittle">- Espresso</h3>
+          <h3 class="menus-card-tittle">- Kapo</h3>
           <p class="menus-card-price">Price 10$</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Product Section  -->
+    <section class="product" id="product">
+      <h2><span>What We</span> Sell</h2>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolores doloremque harum mollitia ullam dolorum laborum?</p>
+
+      <div class="row">
+        <div class="product-card">
+          <div class="product-icon">
+            <a href="#"><img src="img/icon/shopping-cart.svg" alt="" /></a>
+            <a href="#" class="item-detail-btn"><img src="img/icon/eye.svg" alt="" /></a>
+          </div>
+          <div class="product-img">
+            <img src="img/Product/1.jpg" alt="" />
+          </div>
+          <div class="product-content">
+            <h3>Coffe Beans Americano</h3>
+            <div class="product-stars">
+              <img src="img/icon/star.svg" alt="" />
+              <img src="img/icon/star.svg" alt="" />
+              <img src="img/icon/star.svg" alt="" />
+              <img src="img/icon/star.svg" alt="" />
+              <img src="img/icon/star.svg" alt="" />
+            </div>
+          </div>
+          <div class="product-price">Price <span> 8$ </span>5$</div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-icon">
+            <a href="#"><img src="img/icon/shopping-cart.svg" alt="" /></a>
+            <a href="#" class="item-detail-btn"><img src="img/icon/eye.svg" alt="" /></a>
+          </div>
+          <div class="product-img">
+            <img src="img/Product/2.jpg" alt="" />
+          </div>
+          <div class="product-content">
+            <h3>Coffe Beans Americano</h3>
+            <div class="product-stars">
+              <img src="img/icon/star.svg" alt="" />
+              <img src="img/icon/star.svg" alt="" />
+              <img src="img/icon/star.svg" alt="" />
+              <img src="img/icon/star.svg" alt="" />
+              <img src="img/icon/star.svg" alt="" />
+            </div>
+          </div>
+          <div class="product-price">Price <span> 8$ </span>5$</div>
+        </div>
+
+        <div class="product-card">
+          <div class="product-icon">
+            <a href="#"><img src="img/icon/shopping-cart.svg" alt="" /></a>
+            <a href="#" class="item-detail-btn"><img src="img/icon/eye.svg" alt="" /></a>
+          </div>
+          <div class="product-img">
+            <img src="img/Product/3.jpg" alt="" />
+          </div>
+          <div class="product-content">
+            <h3>Coffe Beans Americano</h3>
+            <div class="product-stars">
+              <img src="img/icon/star.svg" alt="" />
+              <img src="img/icon/star.svg" alt="" />
+              <img src="img/icon/star.svg" alt="" />
+              <img src="img/icon/star.svg" alt="" />
+              <img src="img/icon/star.svg" alt="" />
+            </div>
+          </div>
+          <div class="product-price">Price <span> 8$ </span>5$</div>
         </div>
       </div>
     </section>
@@ -122,15 +235,15 @@
 
         <form action="">
           <div class="input-group">
-            <i data-feather="user"></i>
+            <img src="img/icon/users.svg" alt="" />
             <input type="text" placeholder="Put Your Name" />
           </div>
           <div class="input-group">
-            <i data-feather="mail"></i>
+            <img src="img/icon/mail.svg" alt="" />
             <input type="email" placeholder="Put Your Email" />
           </div>
           <div class="input-group">
-            <i data-feather="phone"></i>
+            <img src="img/icon/phone.svg" alt="" />
             <input type="number" placeholder="Put Your Number Phone" />
           </div>
 
@@ -142,14 +255,14 @@
     <!-- Footer -->
     <footer>
       <div class="social">
-        <a href="#">
-          <i data-feather="linkedin"></i>
+        <a href="https://www.linkedin.com/in/mahludin09/">
+          <img src="img/icon/linkedin.svg" alt="" />
         </a>
-        <a href="#">
-          <i data-feather="github"></i>
+        <a href="https://github.com/Drunz09">
+          <img src="img/icon/github.svg" alt="" />
         </a>
-        <a href="#">
-          <i data-feather="instagram"></i>
+        <a href="https://instagram.com/_mh_dn09">
+          <img src="img/icon/instagram.svg" alt="" />
         </a>
       </div>
 
@@ -165,9 +278,29 @@
       </div>
     </footer>
 
+    <!-- Detail Product -->
+    <div class="modal" id="item-detail-modal">
+      <div class="modal-container">
+        <a href="#" class="close-icon"><img src="img/icon/x.svg" alt="" /></a>
+        <div class="modal-content">
+          <img src="img/Product/1.jpg" alt="" class="img-prod" />
+          <div class="product-conten">
+            <h3>Product 1</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio, ea fugit id amet assumenda, nam rerum nostrum, veniam magni reiciendis rem impedit provident illum voluptatibus.</p>
+            <div class="product-stars">
+              <img src="img/icon/star.svg" alt="" />
+              <img src="img/icon/star.svg" alt="" />
+              <img src="img/icon/star.svg" alt="" />
+              <img src="img/icon/star.svg" alt="" />
+              <img src="img/icon/star.svg" alt="" />
+            </div>
+            <div class="product-price">Price <span> 8$ </span> $5</div>
+            <a href="#" class="img-a"> <img src="img/icon/shopping-cart.svg" alt="" /><span>Add To Cart</span> </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="js/script.js"></script>
-    <script>
-      feather.replace();
-    </script>
   </body>
 </html>

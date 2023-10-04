@@ -85,6 +85,101 @@ body {
   display: none;
 }
 
+.navbar .search-form {
+  position: absolute;
+  top: 100%;
+  right: 7%;
+  background-color: #fff;
+  width: 45rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: 0.3s;
+}
+
+.navbar .search-form.active {
+  transform: scaleY(1);
+}
+
+.navbar .search-form input {
+  height: 100%;
+  width: 100%;
+  font-size: 1.4rem;
+  color: var(--bg);
+  padding: 1rem;
+}
+
+.navbar .search-form label {
+  cursor: pointer;
+  font-size: 2rem;
+  margin-right: 1.5rem;
+}
+
+.navbar .search-form img {
+  filter: invert(1);
+}
+
+/* Shopping */
+.shopping-cart {
+  position: absolute;
+  top: 100%;
+  right: -100%;
+  height: 100vh;
+  width: 35rem;
+  padding: 0 1.5rem;
+  color: var(--bg);
+  background-color: #fff;
+  transition: 0.3s;
+}
+
+.shopping-cart.active {
+  right: 0;
+}
+
+.shopping-cart .cart-item {
+  margin: 2rem 0;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px dashed #555;
+  position: relative;
+}
+
+.shopping-cart .product-imges {
+  height: 6rem;
+  width: 6rem;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.shopping-cart h3 {
+  font-size: 1.6rem;
+  padding-bottom: 0.5rem;
+}
+
+.shopping-cart .item-price {
+  font-size: 1.2rem;
+}
+
+.shopping-cart .remove-item {
+  filter: invert(1);
+  transform: scale(1.1);
+  position: absolute;
+  right: 1rem;
+  cursor: pointer;
+}
+
+.shopping-cart .remove-item:hover {
+  border-radius: 50%;
+  border: 3px solid rgb(255, 255, 255);
+  padding: 5px;
+}
+
 /* Hero Section */
 .hero {
   min-height: 100vh;
@@ -142,16 +237,18 @@ body {
   box-shadow: 1px 1px 3px rgba(1, 1, 3, 0.5);
 }
 
-/* About, Menus, & Contact Section */
+/* About, Menus, Contact, & Product Section */
 .about,
 .menus,
-.contact {
+.contact,
+.product {
   padding: 6rem 7% 1.4rem;
 }
 
 .about h2,
 .menus h2,
-.contact h2 {
+.contact h2,
+.product h2 {
   font-size: 2.4rem;
   text-align: center;
   margin-bottom: 3rem;
@@ -159,7 +256,8 @@ body {
 
 .about h2 span,
 .menus h2 span,
-.contact h2 span {
+.contact h2 span,
+.product h2 span {
   color: var(--primary);
 }
 
@@ -223,13 +321,91 @@ body {
   border-radius: 50%;
   width: 240px;
   height: 250px;
-  border: 5px solid rgba(255, 255, 255, 0.5);
+  border: 5px solid rgba(255, 255, 255, 0.8);
   object-fit: cover;
   object-position: center;
 }
 
 .menus .row .menus-card .menus-card-tittle {
   margin: 1rem auto 0.5rem;
+}
+
+/* Product */
+.product h2 {
+  margin-bottom: 1rem;
+}
+.product p {
+  text-align: center;
+  max-width: 30rem;
+  margin: auto;
+  font-size: 1.4rem;
+  font-weight: 100;
+  line-height: 1.6;
+}
+
+.product .row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 1.5rem;
+  margin-top: 4rem;
+}
+
+.product .row .product-card {
+  text-align: center;
+  border: 1px solid #666;
+  padding: 2rem;
+}
+
+.product .row .product-card .product-icon {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.product .row .product-card .product-icon a {
+  width: 4rem;
+  height: 4rem;
+  margin: 0.3rem;
+  border: 1px solid #666;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product .row .product-card .product-icon a:hover {
+  background-color: var(--primary);
+  border: 1px solid var(--primary);
+}
+
+.product .row .product-card .product-img {
+  padding: 1rem 0;
+}
+
+.product .row .product-card .product-img img {
+  height: 18rem;
+  width: 20rem;
+}
+
+.product .row .product-card .product-content h3 {
+  font-size: 1.8rem;
+  color: var(--primary);
+}
+
+.product .row .product-card .product-content .product-stars {
+  font-size: 1.4rem;
+  padding: 0.8rem;
+}
+
+.product .row .product-card .product-price {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.product .row .product-card .product-price span {
+  text-decoration: line-through;
+  font-weight: lighter;
+  font-size: 1.2rem;
 }
 
 /* Contact */
@@ -331,6 +507,91 @@ footer .credit a {
   font-weight: 700;
 }
 
+/* Detail Product */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-container {
+  position: relative;
+  background-color: #fefefe;
+  color: var(--bg);
+  margin: 15% auto;
+  padding: 1.2rem;
+  border: 1px solid #666;
+  width: 80%;
+  height: fit-content;
+  animation: modal 0.5s;
+}
+
+.modal-container .close-icon {
+  position: absolute;
+  right: 1.5rem;
+  filter: invert(1);
+}
+
+.modal-content {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.modal-content .img-prod {
+  width: 40rem;
+  height: 20rem;
+  margin-right: 2rem;
+  object-fit: cover;
+}
+
+.modal-content p {
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  margin-top: 1.2rem;
+}
+
+.modal-content .img-a {
+  display: flex;
+  gap: 1rem;
+  width: 12rem;
+  background-color: var(--primary);
+  color: #fff;
+  margin-top: 1rem;
+  padding: 1rem 1.6rem;
+}
+
+.modal-content .product-conten .product-stars {
+  filter: invert(1);
+  margin: 1rem 0;
+}
+
+.modal-content .product-conten .product-price {
+  font-size: 1rem;
+}
+.modal-content .product-conten .product-price span {
+  font-size: 0.9rem;
+  font-weight: lighter;
+  text-decoration: line-through;
+}
+
+/* Modal Animation */
+@keyframes modal {
+  0% {
+    top: -300px;
+    opacity: 0;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+  }
+}
+
 /* Media Queries */
 /* computer */
 @media (max-width: 1355px) {
@@ -383,6 +644,11 @@ footer .credit a {
     display: inline-block;
   }
 
+  .navbar .search-form {
+    width: 90%;
+    right: 2rem;
+  }
+
   /* About Section Tablet */
   .about .row {
     flex-wrap: wrap;
@@ -406,6 +672,12 @@ footer .credit a {
     font-size: 1.6rem;
   }
 
+  /* Product */
+  .product .row .product-card .product-img img {
+    height: 15rem;
+    width: 15rem;
+  }
+
   /* Contact */
 
   .contact .row {
@@ -416,6 +688,26 @@ footer .credit a {
   }
   .contact .row form {
     padding-top: 0;
+  }
+
+  /* Modal Content */
+
+  .modal-content {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .modal-content .product-conten {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .modal-content .img-prod {
+    height: 20rem;
+    width: 80%;
+    object-fit: cover;
   }
 }
 
